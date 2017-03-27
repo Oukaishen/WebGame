@@ -267,7 +267,7 @@
 
 					//alert("fuck me");
 					startx = parseInt(event.touches[0].clientX);
-					//starty = parseInt(event.touches[0].clientY);
+					starty = parseInt(event.touches[0].clientY);
 				}
 			}
 	    function onDocumentTouchMove( event ) {
@@ -277,7 +277,7 @@
 					event.preventDefault();
 
 					distx = parseInt(event.touches[0].clientX) - startx;
-					disty = parseInt(event.touches[0].clientY) - startY;
+					disty = parseInt(event.touches[0].clientY) - starty;
 					//xy = Math.abs(distx)-Math.abs(disty);
 					//if(xy >0){
 						if(distx >0){
