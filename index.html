@@ -259,10 +259,21 @@
 
 					event.preventDefault();
 
-					alert("fuck me");
+					//alert("fuck me");
 				}
 			}
+	    function onDocumentTouchMove( event ) {
 
+				if ( event.touches.length === 1 ) {
+
+					event.preventDefault();
+
+					alert("I am moving");
+
+				}
+
+			}
+		
             function onResize() {
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 camera.aspect = window.innerWidth/window.innerHeight;
@@ -321,7 +332,7 @@
                 ///
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-		    
+		document.addEventListener( 'touchmove', onDocumentTouchMove, false );    
                 // Set the initial game state.
                 gameState = 'initialize';
                 
