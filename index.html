@@ -42,6 +42,7 @@
                 wWorld         = undefined,
                 wBall          = undefined,
 	    // for mobile use
+		x_y            = 0,
 		startx         = 0,
 		starty         = 0,
 		distx          = 0,
@@ -277,7 +278,7 @@
 
 					distx = parseInt(event.touches[0].clientX) - startx;
 					disty = parseInt(event.touches[0].clientY) - startY;
-					var x_y = Math.abs(distx)-Math.abs(disty);
+					x_y = Math.abs(distx)-Math.abs(disty);
 					if(x_y >0){
 						if(distx >0){
 							keyAxis = [1,0];
@@ -286,7 +287,7 @@
 							keyAxis = [-1,0];
 							}
 						}
-					else {
+					else if(x_y <0) {
 						
 						if(disty >0){
 							keyAxis = [0,-1];
