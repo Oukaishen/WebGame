@@ -276,7 +276,7 @@
 					event.preventDefault();
 
 					distx = parseInt(event.touches[0].clientX) - startx;
-					disty = parstInt(event.touches[0].clientY) - startY;
+					disty = parseInt(event.touches[0].clientY) - startY;
 					var x_y = Math.abs(distx)-Math.abs(disty);
 					if(x_y >0){
 						if(distx >0){
