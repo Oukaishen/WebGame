@@ -27,7 +27,7 @@
                 planeTexture   = THREE.ImageUtils.loadTexture('./floor.jpg'),
                 brickTexture   = THREE.ImageUtils.loadTexture('./brick.png'),
                 gameState      = undefined,
-
+		
             // Box2D shortcuts
                 b2World        = Box2D.Dynamics.b2World,
                 b2FixtureDef   = Box2D.Dynamics.b2FixtureDef,
@@ -40,7 +40,12 @@
 
             // Box2D world variables 
                 wWorld         = undefined,
-                wBall          = undefined;
+                wBall          = undefined,
+	    // for mobile use
+		startx         = 0,
+		starty         = 0,
+		distx          = 0,
+		disty          = 0;
 
 
 
@@ -260,6 +265,7 @@
 					event.preventDefault();
 
 					//alert("fuck me");
+					startx = parseInt(event.touches[0].clientX);
 				}
 			}
 	    function onDocumentTouchMove( event ) {
@@ -268,7 +274,13 @@
 
 					event.preventDefault();
 
-					keyAxis = [1,0];
+					distx = parseInt(event.touches[0].clientX) - startx;
+					if(distx >0){
+						keyAxis = [1,0];
+					}
+					else if (distx <0){
+						keyAxis = [0,1];
+					}
 
 				}
 
