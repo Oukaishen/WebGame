@@ -267,7 +267,7 @@
 
 					//alert("fuck me");
 					startx = parseInt(event.touches[0].clientX);
-					starty = parseInt(event.touches[0].clientY);
+					//starty = parseInt(event.touches[0].clientY);
 				}
 			}
 	    function onDocumentTouchMove( event ) {
@@ -277,25 +277,25 @@
 					event.preventDefault();
 
 					distx = parseInt(event.touches[0].clientX) - startx;
-					disty = parseInt(event.touches[0].clientY) - startY;
-					xy = Math.abs(distx)-Math.abs(disty);
-					if(xy >0){
+					//disty = parseInt(event.touches[0].clientY) - startY;
+					//xy = Math.abs(distx)-Math.abs(disty);
+					//if(xy >0){
 						if(distx >0){
 							keyAxis = [1,0];
 							}
 						else if (distx <0){
 							keyAxis = [-1,0];
 							}
-						}
-					else if(xy <0) {
+						//}
+// 					else if(xy <0) {
 						
-						if(disty >0){
-							keyAxis = [0,-1];
-							}
-						else if (distx <0){
-							keyAxis = [0,1];
-							}
-					}
+// 						if(disty >0){
+// 							keyAxis = [0,-1];
+// 							}
+// 						else if (distx <0){
+// 							keyAxis = [0,1];
+// 							}
+// 					}
 				}
 
 			}
