@@ -253,6 +253,15 @@
 				alert("fuck you");
 
 			}
+	    function onDocumentTouchStart( event ) {
+
+				if ( event.touches.length === 1 ) {
+
+					event.preventDefault();
+
+					alert("fuck me");
+				}
+			}
 
             function onResize() {
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -311,7 +320,8 @@
                 
                 ///
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-
+		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		    
                 // Set the initial game state.
                 gameState = 'initialize';
                 
