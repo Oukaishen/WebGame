@@ -245,7 +245,14 @@
                 requestAnimationFrame(gameLoop);
 
             }
+            
+            function onDocumentMouseDown( event ) {
 
+				event.preventDefault();
+
+				alert("fuck you");
+
+			}
 
             function onResize() {
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -302,6 +309,8 @@
                 KeyboardJS.bind.axis('a', 'd', 's', 'w', onMoveKey);
                 $(window).resize(onResize);
                 
+                ///
+                document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
                 // Set the initial game state.
                 gameState = 'initialize';
